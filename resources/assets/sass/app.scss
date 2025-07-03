@@ -1,0 +1,262 @@
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Datatabels
+@import '~datatables.net-bs4/css/dataTables.bootstrap4';
+
+// Select2
+@import '~select2/src/scss/core';
+
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+
+// Welcome
+body.welcome {
+  background-color: $brown;
+
+  .full-height {
+    height: 100vh;
+  }
+
+  .flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .position-ref {
+    position: relative;
+  }
+
+  .top-right {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+  }
+
+  .content {
+    text-align: center;
+  }
+
+  .title {
+    font-size: 84px;
+  }
+
+  .links > a {
+    color: #636b6f;
+    padding: 0 25px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .m-b-md {
+    @include text-hide(true);
+    background: $brown url(../images/garappa.png) no-repeat;
+    display: block;
+    width: 300px;
+    height: 100px;
+    background-size: cover;
+  }
+}
+
+// Custom styles
+.navbar {
+  padding: 0.25rem 1rem
+}
+
+.navbar-brand {
+  @include text-hide(true);
+  background: $brown url(../images/garappa.png) no-repeat;
+  display: block;
+  width: 165px;
+  height: 55px;
+  background-size: cover;
+}
+
+.bg-brown {
+  background-color: $brown;
+}
+
+.col-form-label {
+  text-align: right;
+  @include media-breakpoint-down(sm) {
+    text-align: left;
+  }
+}
+
+.navbar-laravel {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+h1.page-title {
+  margin-bottom: 2rem;
+  border-bottom: solid 1px $gray;
+}
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+
+  input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
+}
+
+.progress {
+  display: none;
+}
+
+#image_preview {
+  min-height: 85px;
+}
+
+.table {
+  &.dataTable {
+    border-bottom: 1px solid $table-border-color;
+    thead {
+      th {
+        &.col-actions{
+          min-width: 60px;
+        }
+      }
+    }
+  }
+}
+
+.select2-container {
+  .select2-selection--multiple,
+  .select2-selection--single {
+    height: auto;
+    border-color: #ced4da;
+    .select2-selection__rendered {
+      padding-top: 4px;
+      padding-bottom: 4px;
+    }
+    .select2-selection__arrow {
+      top: 4px;
+    }
+  }
+}
+
+.select2-container--default {
+  .select2-results__option[aria-selected=true] {
+    display: none;
+  }
+  
+  &.select2-container--focus {
+    .select2-selection--multiple {
+      border-color: #ced4da;
+    }
+  }
+}
+
+.page-title {
+  margin-bottom: 30px;
+}
+
+.switch_box{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-top: calc(0.375rem + 1px);
+}
+
+input[type="checkbox"].switch_1{
+  font-size: 30px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 1.5em;
+  height: 0.75em;
+  background: #ddd;
+  border-radius: 1.5em;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+input[type="checkbox"].switch_1:checked{
+  background: #50ec5d;
+}
+
+input[type="checkbox"].switch_1:after{
+  position: absolute;
+  content: "";
+  width: 0.75em;
+  height: 0.75em;
+  border-radius: 50%;
+  background: #fff;
+  -webkit-box-shadow: 0 0 .25em rgba(0,0,0,.3);
+  box-shadow: 0 0 .25em rgba(0,0,0,.3);
+  -webkit-transform: scale(.7);
+  transform: scale(.7);
+  left: 0;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+input[type="checkbox"].switch_1:checked:after{
+  left: calc(100% - 0.75em);
+}
+
+/* Switch 1 Specific Style End */
+input.parsley-success,
+select.parsley-success,
+textarea.parsley-success {
+  color: $success;
+  border-color: $success;
+}
+
+input.parsley-error,
+select.parsley-error,
+textarea.parsley-error {
+  color: $danger;
+  border-color: $danger;
+}
+
+.parsley-errors-list {
+  color: $danger;
+  margin: 4px 2px 0;
+  padding: 0;
+  list-style-type: none;
+  font-size: 0.75em;
+  line-height: 1;
+  opacity: 0;
+
+  transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -webkit-transition: all .3s ease-in;
+}
+
+.parsley-errors-list.filled {
+  opacity: 1;
+}
